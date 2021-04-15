@@ -354,8 +354,6 @@ int main(int argc, char** argv)
 
 	unsigned int weight_buf_size;
 
-	size_t knl_memWr_global_size[3];
-	size_t knl_memWr_local_size[3];
 	size_t knl_lrn_global_size[3];
 	size_t knl_lrn_local_size[3];
 
@@ -387,7 +385,7 @@ int main(int argc, char** argv)
 #if defined(SW_EMU)
     device_ptr = 0; // only use one device, select the proper idx
 #else
-    device_ptr = 1; // only use one device, select the proper idx
+    device_ptr = 0; // only use one device, select the proper idx
 #endif
     num_devices = 1; // reset the num of device to 1
     //for(unsigned device_ptr = 0; device_ptr < num_devices; ++device_ptr) {
